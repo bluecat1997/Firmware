@@ -296,14 +296,16 @@ void Tailsitter::fill_actuator_outputs()
 			_actuators_mc_in->control[actuator_controls_s::INDEX_THROTTLE];
 	}
 
-	if (_params->elevons_mc_lock && _vtol_schedule.flight_mode == vtol_mode::MC_MODE) {
-		_actuators_out_1->control[actuator_controls_s::INDEX_ROLL] = 0;
-		_actuators_out_1->control[actuator_controls_s::INDEX_PITCH] = 0;
-
-	} else {
+	if (_vtol_schedule.flight_mode == vtol_mode::FW_MODE) {
 		_actuators_out_1->control[actuator_controls_s::INDEX_ROLL] =
 			_actuators_fw_in->control[actuator_controls_s::INDEX_ROLL];
 		_actuators_out_1->control[actuator_controls_s::INDEX_PITCH] =
 			_actuators_fw_in->control[actuator_controls_s::INDEX_PITCH];
+		_actuators_out_1->control[actuator_controls_s::INDEX_YAW] =
+			_actuators_fw_in->control[actuator_controls_s::INDEX_YAW];
+	} else {
+		_actuators_out_1->control[actuator_controls_s::INDEX_ROLL] = 0;
+		_actuators_out_1->control[actuator_controls_s::INDEX_PITCH] = 0;
+		_actuators_out_1->control[actuator_controls_s::INDEX_YAW] = 0;
 	}
 }

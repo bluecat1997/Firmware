@@ -29,6 +29,7 @@ fi
 
 set MAV_TYPE 19
 
-set MIXER nuaa_vbet
-
+set MIXER nuaa_vbat_8
+set MIXER_AUX nuaa_vbat_8
 set PWM_OUT 1234567
+set PWM_AUX_OUT 1234
