@@ -6,12 +6,13 @@
 # @class VTOL
 #
 # @output MAIN1 servo front
-# @output MAIN2 servo back
-# @output MAIN3 servo left
-# @output MAIN4 servo right
+# @output MAIN2 servo right
+# @output MAIN3 servo back
+# @output MAIN4 servo left
 # @output MAIN5 motor up
 # @output MAIN6 motor down
-#
+# @output MAIN7 motor left flap
+# @output MAIN8 motor right flap
 # @maintainer Qiochang Chen <bluecat1997@sina.cn>
 #
 
@@ -31,5 +32,5 @@ set MAV_TYPE 19
 
 set MIXER nuaa_vbat_8
 set MIXER_AUX nuaa_vbat_8
-set PWM_OUT 1234567
+set PWM_OUT 12345678
 set PWM_AUX_OUT 1234
